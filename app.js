@@ -23,10 +23,15 @@ app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
 const adminRoutes  = require('./routes/candies');
 
-app.use(bodyParser.json({ extended: false }));
+// app.use(bodyParser.json({ extended: false }));
+app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(adminRoutes)
+
+app.get('/',(req,res)=>{
+  res.redirect('/shop')
+})
 
 // Route to render the candy_shop.html using EJS
 app.get('/shop', (req, res) => {
