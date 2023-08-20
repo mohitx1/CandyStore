@@ -1,4 +1,9 @@
-body {
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap"); */
+
+    /* Custom styles */
+    body {
     font-family: Arial, sans-serif;
     background-color: #b9d7f8;
     margin: 0;
@@ -7,9 +12,11 @@ body {
 
   .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    gap: 20px;
   }
 
   .card {
@@ -83,3 +90,4 @@ body {
   button {
     cursor: pointer;
   }
+    

@@ -1,6 +1,6 @@
 const Candy = require('../models/Candy');
 
-exports.postCandy = async (req,res,next)=>{
+const postCandy = async (req,res,next)=>{
   try{
   const cname = req.body.cname
   const description = req.body.description
@@ -18,19 +18,19 @@ exports.postCandy = async (req,res,next)=>{
   }
 }
 
-exports.getCandies = async(req,res,next)=>{
+const getCandies = async(req,res,next)=>{
 
   const candies = await Candy.findAll()
   res.json({allCandy:candies})
 }
 
-exports.getCandy = async(req,res,next)=>{
+const getCandy = async(req,res,next)=>{
   const cid = req.params.id 
   const candy = await Candy.findByPk(cid)
   res.json(candy)
 }
 
-exports.updateCandy1 = async(req,res,next)=>{
+const updateCandy1 = async(req,res,next)=>{
   const updateId = req.params.id
   Candy.findByPk(updateId).then(candy=>{
     Candy.update(
@@ -48,7 +48,7 @@ exports.updateCandy1 = async(req,res,next)=>{
   .catch(e=>console.log(e))
 }
 
-exports.updateCandy2 = async(req,res,next)=>{
+const updateCandy2 = async(req,res,next)=>{
   const updateId = req.params.id
   Candy.findByPk(updateId).then(candy=>{
     Candy.update(
@@ -66,7 +66,7 @@ exports.updateCandy2 = async(req,res,next)=>{
   .catch(e=>console.log(e))
 }
 
-exports.updateCandy3 = async(req,res,next)=>{
+const updateCandy3 = async(req,res,next)=>{
   const updateId = req.params.id
   Candy.findByPk(updateId).then(candy=>{
     Candy.update(
@@ -84,7 +84,7 @@ exports.updateCandy3 = async(req,res,next)=>{
   .catch(e=>console.log(e))
 }
 
-exports.deleteCandy = async(req,res,next)=>{
+const deleteCandy = async(req,res,next)=>{
   const delCandy = req.params.id
   // console.log(deluser)
   Candy.findByPk(delCandy)
@@ -96,3 +96,19 @@ exports.deleteCandy = async(req,res,next)=>{
   })
   .catch(e=>console.log(e))
 }
+
+module.exports = {
+  deleteCandy,
+  updateCandy3,
+  updateCandy2,
+  updateCandy1,
+  getCandy,
+  getCandies,
+  postCandy
+};
+
+
+
+
+
+
