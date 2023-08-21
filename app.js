@@ -1,12 +1,12 @@
 const path = require('path');
 
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 // const Candy = require('./models/Candy.js')
 // const cors = require('cors')
 const port=3000
 
-const ejs = require('ejs');
+// const ejs = require('ejs');
 
 // const errorController = require('./controllers/error');
 const sequelize =require('./util/database')
